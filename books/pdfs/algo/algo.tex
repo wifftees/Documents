@@ -88,6 +88,22 @@
         \item Аналогично с $a_i$ - even
         \item Сумма максимальна так как мы всегда прибавляем к максимальной 
     \end{itemize}
-    
+
+    \item [10.158]
+    \begin{itemize}
+        \item $dp[i][j][k]$ - количество путей в (i, j) со стоимостью k
+        \item щ
+        \begin{lstlisting}
+            for i in range(n):
+                for j in range(m):
+                    for l in range(k):
+                        if a[i][j] + l > k:
+                            cnt += dp[i - 1][j][l]
+                            cnt += dp[i][j - 1][l]
+                        else:
+                            dp[i][j][a[i][j] + l] += dp[i - 1][j][l]
+                            dp[i][j][a[i][j] + l] += dp[i][j - 1][l]
+        \end{lstlisting}
+    \end{itemize}
 \end{enumerate}
 \end{document}
