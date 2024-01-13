@@ -1,0 +1,31 @@
+Github Workflow
+
+1. Создаете воркфлоу (https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#create-an-example-workflow)
+2. Меняете название 
+	job: test-maven (в примере check-bats-version),
+	name: test (в примере learn-github actions)
+3. Добавляете все строчки из примера в steps (https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven#specifying-the-java-version-and-architecture)
+4. Добавляете:
+	-run: mvn compile
+	-run: mvn test-compile
+	-run: mvn test
+5. Вместе on: push, добавляете workflow-dispatch из примера, удалите tags и enviroment (https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven#specifying-the-java-version-and-architecture)
+6. Как только вы создадите все автоматически закомитится
+
+Maven 
+
+1. Скачиваете maven (https://maven.apache.org/download.cgi)
+2. Копируете репу и открываете ее в idea
+3. Добавляете поддержку maven (https://www.jetbrains.com/help/idea/convert-a-regular-project-into-a-maven-project.html#develop_with_maven)
+4. В xml файле в качестве плагина добавляете maven-compiler-plugin (ВЕРСИЯ 3.8.0) (https://maven.apache.org/guides/getting-started/#how-do-i-use-plugins)
+5. Добавляете этот плагин для тестов (https://maven.apache.org/surefire/maven-surefire-plugin/usage.html)
+6. Зайдите в папку с исходным кодом тестов и понажимаете на те зависимости, которые подчеркнуты красным, он сам добавит их в pom.xml.
+7. Добавьте зависимость commons-math3
+8. После этого запускаете mvn compile
+			mvn test-compile
+			mvn test
+Все должно запустится успешно
+9. Коммите и пушите 
+
+
+Заходите в actions на гитхабе и запускаете воркфлоу

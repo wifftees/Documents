@@ -1,0 +1,67 @@
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\usepackage{listings}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+
+\begin{document}
+\begin{enumerate}
+    \item [11.170]\phantom{k} \\
+    \begin{itemize}
+        \item $dp[i][j] = \min (h_j + dp[i - 1][j - 1]; dp[i][j - 1])$
+    \end{itemize}
+
+    \item [11.172]\phantom{k} \\
+    \begin{itemize}
+        \item $dp[i][j] = (s_i == s_j) + dp[i-1][j-1](s_i == s_j)$
+    \end{itemize}
+
+    \item [11.173] \phantom{k} \\
+    \begin{itemize}
+        \item $dp[i] = 1 + \max_{j < i \quad\text{and} \quad a[i] \%  a[j] == 0}(dp[j])$
+    \end{itemize}
+
+    \item [11.183] \phantom{k} \\
+    \begin{itemize}
+        \item $a \& b \implies a, b \leq \min (a, b) \implies$ они всегда будут убывать
+        \item Пусть $\exists s_i: s_i \not\subset mask \implies mask | s_i > mask \implies mask | (s_{i-1} \& mask) = (mask | s_{i-1}) \& mask > mask \implies$ 
+        противоречие  $\implies \forall i: s_i \subset mask$
+        \item Докажем, что код выводит все возможные подмаски.
+        \item Пусть для k битов равных единице, код итерируется по всем возможным подмаскам, таким что 
+        меняются только k последних единиц, а n - k остаются также единицами.
+        \item Итерация для k происходит от того момента когда во всем subset-е единиц, все единицы. 
+        До того момента пока, пока все единицы не станут нулями.
+        \item$s = \underbrace{11\dots11}_\text{n - k}\underbrace{0\dots0}_\text{k}$  
+        \item Вычитаем 1 и k + 1 бит становиться 0; а k -битов становятся 1
+    \end{itemize}
+
+    \item [11.184]
+    \begin{itemize}
+        \item Во внешнем цикле мы итерируемся по всем подмножествам данного множества, таким образом делаем 
+        $\dbinom{n}{1} + \dbinom{n}{2} + \dots +\dbinom{n}{n} = 2^{n}$
+        \item На каждой итерации внешнего цикла мы получаем какое-то подмножество и итерируемся по всем его подмножествам
+        $\dbinom{n}{k} 2^{k}$
+        \item 
+        $\dbinom{n}{1}2^{1} + \dbinom{n}{2}2^{2} + \dots +\dbinom{n}{n}2^{n} = \frac{n!}{(n - 1)! 1!}2^{1} + \dots \frac{n!}{n!}2^{n}$ \\
+        $n! (\frac{2^{1}}{(n - 1)!} + \dots )$ бином ньютона
+    \end{itemize}
+
+
+\end{enumerate}
+\end{document}

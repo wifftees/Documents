@@ -1,0 +1,220 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+
+\begin{document}
+\section*{1. Вычислить предел функции}
+\begin{enumerate}
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to \frac{\pi}{2}}{\frac{\sqrt[4]{\sin x} - \sqrt[3]{\sin x}}{\cos^{2} x}} = 
+        \lim\limits_{y \to 0}{\frac{\sqrt[4]{\cos y} - \sqrt[3]{\cos y}}{\sin^{2} y}} = 
+        \lim\limits_{y \to 0}{\frac{(\cos y)^{\frac{1}{4}}(1 - (\cos y)^{\frac{1}{12}})}{\sin^{2}y}} = 
+        \lim\limits_{y \to 0}{
+            \frac{1 \cdot (1 - (1 - \frac{y^{2}}{2})^{\frac{1}{12}})}{\sin ^{2} y} 
+        } =  \\
+        &\lim\limits_{x \to 0}{\frac{\frac{y^2}{2}\frac{1}{12}}{y^{2}}} = \frac{1}{24}
+    \end{align*}
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to \frac{1}{4}}{\frac{1 - \ctg (\pi x)}{\ln (\tg (\pi x))}} = \lim\limits_{x \to \frac{1}{4}}{-\frac{1 - \ctg (\pi x)}{\ln (\ctg (\pi x))}} \\
+        & t = 1 - \ctg (\pi x) \\
+        &\lim\limits_{t \to 0}{-\frac{t}{\ln (1 - t)}} = -\frac{x}{-x} = 1
+    \end{align*}
+    \item 
+    \begin{align*}
+       \lim\limits_{x \to \infty}{x^{2}(4^{\frac{1}{x}} - 4^{\frac{1}{x + 1}})} = 
+       \lim\limits_{x \to \infty}{x^2 4^{\frac{1}{x + 1}}(4^{\frac{1}{x(x + 1)}} - 1)} = 
+       \lim\limits_{x \to \infty}{x^{2} 1\cdot(\frac{1}{x + 1}\ln 4)} =
+       \lim\limits_{x \to \infty}{\frac{1}{1 + \frac{1}{x}}\ln 4} = \ln 4
+    \end{align*}
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to 0}{(\cos x)^{-\frac{1}{x^{2}}}} = \lim\limits_{x \to 0}{e^{-\frac{1}{x^{2}}\ln(1 + (\cos x - 1))}} =
+        \lim\limits_{x \to 0}{e^{-\frac{1}{x^{2}}(\cos x - 1)}} = \lim\limits_{x \to 0}{e^{\frac{1}{x^{2}}(1 - \cos x)}} = \lim\limits_{x \to 0}{e^{\frac{1}{x^{2}}\frac{x^{2}}{2}}} = \sqrt{e}
+    \end{align*}
+    \item
+    \begin{align*}
+        &\lim\limits_{x \to \frac{\pi}{6}}{\frac{\cos (\frac{2 \pi}{3} - x)}{\sqrt{3} - 2\cos x}} =
+        \lim\limits_{y \to 0}{\frac{\sin y}{\sqrt{3} - 2\cos (y + \frac{\pi}{6})}} =
+        \lim\limits_{y \to 0}{\frac{\sin y}{\sqrt{3} - \sqrt{3}\cos y - \sin y}} = 
+        \lim\limits_{y \to 0}{\frac{\sin y}{\sqrt{3}(1 - \cos y) - \sin y}} = \\
+        &\lim\limits_{y \to 0}{\frac{ y}{\sqrt{3}\frac{y^{2}}{2} - y}} =
+        \lim\limits_{y \to 0}{\frac{ 1}{\sqrt{3}\frac{y}{2} - 1}} = -1
+    \end{align*}
+    \item 
+    \begin{align*}
+       \lim\limits_{x \to \infty}{\left(\frac{x}{2x + 1}\right)^{x^{2}}} = \lim\limits_{x \to \infty}{\left(\frac{2x + 1}{x}\right)^{-x^{2}}} = \lim\limits_{x \to \infty}{\left(\frac{x(2 + \frac{1}{x})}{x}\right)^{-x^{2}}} = \lim\limits_{x \to \infty}{\left(2\right)^{-x^{2}}} = 0
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to 7}{\frac{2 x^{2} - 11x - 21}{x^{2} - 9x + 14}} = 
+         \lim\limits_{x \to 7}{\frac{(x - 7)(x + \frac{3}{2})}{(x - 2)(x - 7)}} = \frac{\frac{17}{2}}{5} = \frac{17}{10}
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to 7}{\frac{2x^{2} - 11x - 21}{x^{2} - 9x + 14}} = \lim\limits_{x \to 7}{\frac{(x - 7)(x + \frac{3}{2})}{(x - 2)(x - 7)}} = \frac{17}{5}
+    \end{align*}
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to 1}{(\frac{3}{1 - x^{3}} + \frac{1}{x - 1})} =
+        \lim\limits_{x \to 1}{(\frac{-x^{3} + 3x - 2}{(1 - x^{3})(x - 1)})} =
+        \lim\limits_{x \to 1}{(\frac{(x + 2)(x - 1)^{2}}{(x - 1)^{2}(x^{2}+ x + 1)})} = 1
+    \end{align*}
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to 2}{\frac{\sqrt{7 + 2x - x^{2}} - \sqrt{1 + x + x^{2}}}{2x - x^{2}}} = 
+        \lim\limits_{x \to 2}{\frac{-2(x - 2)(x + \frac{3}{2})}{-x(x - 2)(\sqrt{7 + 2x - x^{2}} + \sqrt{1 + x + x^{2}})}} = \\
+        &\lim\limits_{x \to 2}{\frac{2x + 3}{x(\sqrt{7 + 2x - x^{2}} + \sqrt{1 + x + x^{2}})}} = \frac{7}{4\sqrt{7}}
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to \infty}{\sqrt{x^{2} + \sqrt{x^{2} + \sqrt{x^{2}}}} - \sqrt{x^{2}}} = 
+         \lim\limits_{x \to \infty}{\sqrt{x^{2} + \sqrt{x^{2} + \sqrt{x^{2}}}} - \sqrt{x^{2}}} 
+         \frac{{\sqrt{x^{2} + \sqrt{x^{2} + \sqrt{x^{2}}}} + \sqrt{x^{2}}}}
+         {{\sqrt{x^{2} + \sqrt{x^{2} + \sqrt{x^{2}}}} + \sqrt{x^{2}}}} = \\
+        & \lim\limits_{x \to \infty}{\frac{\sqrt{x^{2} + |x|}}{{\sqrt{x^{2} + \sqrt{x^{2} + \sqrt{x^{2}}}} + \sqrt{x^{2}}}}} = \\
+        & \lim\limits_{x \to \infty}{\frac{|x| \sqrt{1 + \frac{1}{|x|}}}{
+            |x|\sqrt{1 + \frac{\sqrt{1 + \frac{1}{x}}}{x}} + 1 
+        }} = \frac{1}{2}
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to 0}{\frac{\sqrt{1 + \tg x} - \sqrt{1 + \sin x}}{x^{3}}} = 
+        \lim\limits_{x \to 0}{\frac{\tg x - \sin x}{x^{3}(\sqrt{1 + \tg x} + \sqrt{1 + \sin x})}}= 
+        \lim\limits_{x \to 0}{\frac{\tg x (1 - \cos x)}{x^{3}(\sqrt{1 + \tg x} + \sqrt{1 + \sin x})}} =  \\
+        & \lim\limits_{x \to 0}{\frac{x \frac{x^{2}}{2}}{x^{3}(\sqrt{1 + \tg x} + \sqrt{1 + \sin x})}} = \frac{1}{4}
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to 0}{\frac{\ln{\cos{5x}}}{\ln\cos{5x}}} = 
+        \lim\limits_{x \to 0}{\frac{\ln{1 - (1 - \cos{5x})}}{\ln{1 - (1 - \cos{5x})}}} \\
+        & \lim\limits_{x \to 0}{\frac{1 - \cos (5x)}{1 - \cos (4x)}} = 
+         \lim\limits_{x \to 0}{\frac{\frac{25 x^{2}}{2}}{\frac{16 x^{2}}{2}}} = \frac{25}{16}
+    \end{align*}
+
+\end{enumerate}
+
+\section*{2. Сформулировать с помощью неравенств утверждения и привести примеры}
+\begin{enumerate}
+    \item
+    \begin{align*}
+        & \forall \varepsilon > 0: \exists \delta > 0: \forall x < a: 0 < |x - a| < \delta: |f(x)| > \varepsilon \\
+        & \text{Пример: } \frac{1}{x}
+    \end{align*}
+
+    \item
+    \begin{align*}
+        & \forall \varepsilon > 0: \exists \delta > 0: \forall x: |x| > \delta: f(x) > \varepsilon \\
+        & \text{Пример: } -x
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        & \forall \varepsilon > 0: \exists \delta > 0: \forall x: x > \delta: |f(x)| > \varepsilon \\
+        & \text{Пример: } -x
+    \end{align*}
+\end{enumerate}
+
+\section*{3. Вычислить и доказать по определению}
+\begin{enumerate}
+    \item 
+    \begin{align*}
+        & \lim\limits_{x \to 2}{\frac{x^{2} + 4x - 5}{x^{2} - 1}} = \lim\limits_{x \to 2}{\frac{x + 5}{x + 1}} = \frac{7}{3} \\
+        & \forall \varepsilon > 0: \exists \delta > 0: \forall x: 0 < |x - 2| < \delta: |\frac{x + 5}{x + 1} - \frac{7}{3}| < \varepsilon \\
+        & |\frac{x + 5}{x + 1} - \frac{7}{3}| = |\frac{3(x + 5) - 7(x + 1)}{x + 1}| = |\frac{-4(x - 2)}{x + 1}| < |4(x - 2)| < 4\delta \implies \varepsilon = 4\delta
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        &\lim\limits_{x \to \infty}{\frac{x^{2} - 1}{2x^{2} - x - 1}} = \lim\limits_{x \to \infty}{\frac{x + 1}{x + \frac{1}{2}}} = \frac{1 + \frac{1}{x}}{1 + \frac{1}{2x}} = 1 \\
+        &\forall \varepsilon > 0: \exists \delta: \forall x: x > \delta: |\frac{x + 1}{x + \frac{1}{2}} - 1| = |\frac{x + 1 - \frac{1}{2} - x}{x + \frac{1}{2}}| = |\frac{\frac{1}{2}}{x + \frac{1}{2}}|  < \frac{1}{2} \implies \delta = \frac{1}{2}; \quad \varepsilon = \delta
+    \end{align*}
+\end{enumerate}
+\section*{4. Бесконечно малые и бесконечно большие}
+\begin{enumerate}
+    \item \dots
+    \item 
+    \begin{itemize}
+        \item 
+        \begin{align*}
+        & \lim\limits_{x \to \infty}{\frac{
+            x^{5}
+        }{2 x^{2} + x + 1}} = \lim\limits_{x \to \infty}{\frac{x^{3}}{2 + \frac{1}{x} + \frac{1}{x^{2}}}} \to \infty
+        \end{align*}
+        \item Подходящая функция: $\frac{1}{2}x^{3}$
+        \begin{align*}
+            & \lim\limits_{x \to \infty}{\frac{x^{5}}{\frac{1}{2}x^{3}(2x^{2} + x + 1)}} = 
+             \lim\limits_{x \to \infty}{\frac{x^{5}}{(x^{5} + \frac{1}{2}x^{4} + \frac{1}{2}x^{3})}} = 
+             \lim\limits_{x \to \infty}{\frac{1}{(1 + \frac{1}{2x} + \frac{1}{2x^{2}})}} = 1  
+        \end{align*}
+    \end{itemize}
+    
+\end{enumerate}
+
+\section*{5. Определить точки разрыва и исследовать их характер}
+\begin{enumerate}
+    \item Разрыв первого рода длины 2 в точке $x = -1$.
+    \item Устранимые разрывы в точках $x = 1; x = -2$
+    \item Разрывы первого рода длины 1 в точках $\forall x \in \mathbb{Z}$
+    \item 
+    \begin{itemize}
+        \item Разрыв второго рода в $x = 0$
+        \item Скачок длины 2 в $x = 1$
+    \end{itemize}
+\end{enumerate}
+
+\section*{6. Выполнить задания}
+\begin{enumerate}
+    \item
+    \begin{itemize}
+        \item $f(x) = \frac{1}{x}; g(x) = \frac{1}{x}; \varphi(x) = f(x) + g(x) = \frac{2}{x}$ - разрывна в $x_0 = 0$
+        \item $f(x) = \frac{x - 1}{x}; g(x) = \frac{1}{x}; \varphi(x) = f(x) + g(x) = \frac{x - 1}{x} + \frac{1}{x} = 1$ - обе функции разрывны в точке $x_0 = 0$, но константа непрерывна
+    \end{itemize}
+    \item $f(x) = 1, g(x) = x; \frac{f(x)}{g(x)} = \frac{1}{x}$ - функция разрывна в точке 0
+    \item $sign(x)_{\big|X_1 = \{0\}} = 0; sign(x)_{\big|X_2 = (0; +\infty)} = 1$. Очевидно, что она разрывна на $X_1 \cup X_2$
+    
+\end{enumerate}
+
+\section*{7. Выполнить задания}
+\begin{enumerate}
+    \item  
+    \begin{align*}
+        & \exists \varepsilon \in (0; 1]: \forall \delta > 0: \exists x_1, x_2: |x_1 - x_2| < \delta: |f(x_1) - f(x_2)| < \varepsilon; \\
+        & \text{Пусть } x_1 = \sqrt{\pi n}, x_2 = \sqrt{\pi n + \frac{\pi}{2}}, \quad n \in \mathbb{N} \\
+        & |\sqrt{n\pi} - \sqrt{n\pi + \frac{\pi}{2}}| = |\frac{\frac{\pi}{2}}{\sqrt{n\pi} + {\sqrt{n\pi + \frac{\pi}{2}}}}| \to 0 \implies \forall \delta > 0: \exists N: \forall n > N: |x_1 - x_2| < \delta \\
+        & |f(x_1) - f(x_2)| = |\sin (n\pi) - \sin (n\pi + \frac{\pi}{2})| > 1 > \varepsilon;
+    \end{align*}
+    \item 
+    \begin{align*}
+        & \forall \varepsilon > 0: \exists \delta > 0: |x_1 - x_2| < \delta \implies |f(x_1) - f(x_2)| < \varepsilon \\
+        & |\sin (\sqrt{x_1}) - \sin (\sqrt{x_2})| = 
+         |2\sin (\frac{\sqrt{x_1} - \sqrt{x_2}}{2}) \cos (\frac{\sqrt{x_1} + \sqrt{x_2}}{2})| < |\sqrt{x_1} - \sqrt{x_2}|< |x_1 - x_2| < \delta \implies \delta = \varepsilon
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        & \exists \varepsilon \in (0; 2]: \forall \delta > 0: \exists x_1, x_2: |x_1 - x_2| < \delta: |f(x_1) - f(x_2)| < \varepsilon; \\
+        & \text{Пусть } x_1 = \frac{1}{2\pi n}, x_2 = \frac{1}{2\pi n + \pi} \quad n \in \mathbb{N} \\
+        & |\frac{1}{2\pi n} - \frac{1}{2\pi n + \pi}| = \frac{\pi}{2\pi n (2\pi n + \pi)} = \frac{1}{2n(2\pi n + \pi)} \to 0 \implies \forall \delta > 0: \exists N: \forall n > N: |x_1 - x_2| < \delta \\
+        & |f(x_1) - f(x_2)| = |\cos (2\pi n) - \cos (2\pi n + \pi)| > 2 > \varepsilon;
+    \end{align*}
+\end{enumerate}
+
+\end{document}

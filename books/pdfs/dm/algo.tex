@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+
+\begin{document}
+\begin{enumerate}
+    \item [9.138]
+    \begin{itemize}
+        \item $[a_1 < a_2 < a_3 \dots a_{n-1} < a_{n}]$
+    \end{itemize}
+
+    \item [9.139]
+    \begin{itemize}
+        \item $[a_1 > a_2 > a_3 \dots a_{n-1} > a_{n}]$
+    \end{itemize}
+
+    \item [9.140]
+    \begin{itemize}
+        \item QS работает за $\Omega (n^2)$, если каждый раз выбирая pivot, нам нужно делать n операций. \\
+        \item $\implies$ каждый раз выбирая центральный элемент, все элементы слева оказываются больше центрального,\\
+         поэтому их нужно переставить направо, а правые налево \\
+        \item $[a_1 > a_2 > a_3 \dots a_{n-1} > a_{n}]$
+    \end{itemize}
+
+    \item [9.141]
+    \begin{itemize}
+        \item $[a_1 > a_2 > a_3 \dots a_{n-1} > a_{n}]$
+    \end{itemize}
+
+    \item [9.142]
+    \begin{itemize}
+        \item 
+    \end{itemize}
+
+    \item [9.143]
+    \begin{itemize}
+        \item  Скажем, что элементы равные опорому должны быть слева.
+        \item Запускаем обычный QS, мат. ожидание, которого $O(n \log{n})$
+    \end{itemize}
+
+    \item [9.144]
+    \begin{itemize}
+        \item Если $m \geq n \implies$ sort(a) и задача тривиальна
+        \item Далее будем считать, что m < n
+        \item Отсортируем p по возрастанию. Мы можем так сделать за $\mathcal{O}(m \log{m}) = \mathcal{O}(m \log{n} )$
+        \item Если нам нужно получать k-ю статистку в изначальном порядке, то можем посчитать для отсортированного и для каждого $p_i$ , \\
+        будем заносить результат в хэш-мапу.
+        \item Пусть мы нашли нужный элемент в $a_j$, для $p_i$. Тогда $p_{i+1}$ нужно искать справа от $a_j$ в массиве a \\
+        так как $p_i < p_{i+1}$ и для $a_j$ у нас всегда сохраняется инвариант: слева всегда элементы меньше, справа всегда больше. \\
+        \item Тогда асимптотика: $\mathcal{O}(m \log{m} + 3n(\frac{2}{3} + (\frac{2}{3})^2 \dots (\frac{2}{3})^{l_1}) + \dots + 3n((\frac{2}{3})^{l_{m-1} + 1}\dots \frac{2}{3}^{l_m})) = $ \\
+        $= \mathcal{O}(m \log{m} + 3n (\frac{2}{3} + \frac{2}{3}^2 + \dots)) = \mathcal{O}(m \log{n} + n)$
+    \end{itemize}
+
+    \item [9.145]
+    \item [9.146]
+    \begin{itemize}
+        \item Идем по identity permutation и свапаем i-й элемент с рандомным элементом из $\{a_i \dots a_{n-1}\}$
+        \item Вероятность для 1-го $\frac{1}{n}$, для 2-го $\frac{1}{n-1}$ и т.д. В итоге $\frac{1}{n!}$
+    \end{itemize}
+    \item [9.148] +
+    \item [9.149]  
+    \begin{itemize}
+        \item $w_i$ - (элементарный исход) в случайной перестановке будет i неподвижных точек
+        \item $y(w_i) = i$ - случайная величина
+        \item $p(w_i) = \frac{(n - i)!}{n!} = \frac{1}{(n-i+1)(n-i+2)\dots(n)}$ - вероятность случайной величины.
+        \item $E(y) = \sum\limits_{i = 0}^{n}{\frac{(n-i)!}{n!}i}$
+    \end{itemize}
+    \item [9.150]
+    \item [9.151]
+    \begin{itemize}
+        \item Сумма первых n членов геом. прогрессии $S_n = \frac{a_1 - a_n q}{1 - q}$
+        \item $\sum\limits_{i = 0}^{\infty}\frac{1}{3}(\frac{2}{3})^i = 
+        \frac{1}{3}\sum\limits_{i = 0}^{\infty}(\frac{2}{3})^i = 
+        \lim\limits_{n \to \infty}{S_n}$
+        \item Докажем, что предел есть: Очевидно, что последовательность убывает. Очевидно, что снизу она ограничена нулем $\implies$ по т. Виерштрасса предел есть \\
+        \item $\lim\limits_{n \to \infty}{\frac{a_1 - a_n q}{1 - q}} = \lim\limits_{n \to \infty}{\frac{a_1}{1 - q}} - \lim\limits_{n \to \infty}{\frac{a_n q}{1 - q}} = 
+        {\frac{a_1}{1 - q}} - \lim\limits_{n \to \infty}{\frac{q}{1 - q}}  \cdot \lim\limits_{n \to \infty}{a_n} = 
+        {\frac{a_1}{1 - q}}$
+
+    \end{itemize}
+\end{enumerate}
+\end{document}

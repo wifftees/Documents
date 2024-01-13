@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\usepackage{systeme}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+	
+
+
+\begin{document}
+\begin{enumerate}
+    \item [3.] 
+    \begin{align*}
+        &\text{Любaя перестановка представима в виде циклов: } \Leftrightarrow \forall \sigma \in S_n: \sigma = (i_1 \dots i_m) \\
+        &\text{Любой цикл разложим на транспозиции } \Leftrightarrow \forall (i_1 \dots i_m) = (i_1, i_2) \dots (i_{m-1} , i_m) \\
+        &\text{Таким образом. любая перестановка представима в виде транспозиций} \\
+        &\text{Любая транспозиция представима в виде элементов множества }\\
+        & \{(1, 2); (1, 3) \dots (1, n)\}: (a, b) = (1, a)(1, b)(1, a) \implies \\& \text{любая перестановка представима в
+         виде элементов заданного множества}
+    \end{align*}
+
+\end{enumerate}
+\section*{Задачи второй трети семестра}
+\begin{enumerate}
+    \item 
+    \begin{itemize}
+        \item Т. д $\{k_1 a_1 + k_2 a_2; k_1 a_1 - k_2 a_2\}$ - ЛНЗ
+        \item Пусть данный набор ЛЗ $\implies \exists p_1, p_2 \neq 0: p_1 (k_1 a_1 + k_2 a_2) + p_2 (k_1 a_1 - k_2 a_2) = 0$ 
+        \begin{align*}
+            &p_1 (k_1 a_1 + k_2 a_2) + p_2 (k_1 a_1 - k_2 a_2) = 0 \\
+            &k_1p_1a_1 + k_2p_1a_2 + k_1p_2a_1 - k_2p_2a_2 = 0 \\
+            &a_1(k_1p_1 + k_1p_2) + a_2(k_2p_1 - k_2p_2) = 0
+        \end{align*}
+        \item Пользуясь тем, что $a_1$ и $a_2$ ЛНЗ делаем вывод, что 
+        \begin{align*}
+            &k_1 p_1 + k_1 p_2 =0\quad \text{ и } \quad k_2 p_1 - k_2 p_2 = 0 \\
+            &k_1 (p_1 + p_2) =0\quad \text{ и } \quad k_2 (p_1 - p_2) = 0 \\
+        \end{align*}
+        \item $k_1, k_2 \neq 0 \implies $
+        \begin{align*}
+            &(p_1 + p_2) =0\quad \text{ и } \quad (p_1 - p_2) = 0 \implies 2p_1 = 0 \implies \text{противоречие} \implies \text{набор ЛНЗ}\\
+        \end{align*}
+        
+    \end{itemize}
+    \item $a \in A; b \in B; c \in C$
+    \begin{align*}
+        & a < b \Leftrightarrow A \subset B  \\
+        & a = b \Leftrightarrow \nexists M: a \in M \; \& \; b \not\in M\quad \& \quad \nexists M^{\prime}: a \not\in M^{\prime}\; \& \; b \in M^{\prime}\\
+        & a \leq b \Leftrightarrow (a < b \text{ или } a = b) \\
+        & \text{Рефлексинвность: } a = a \implies a \leq a \\
+        & \text{Антисимметричность: Если } a < b \implies A \subset B \implies B \not\subset A \implies \\
+        & a \leq b \; \& \; b \leq a \implies a = b \\
+        & \text{Транзитивность: } a \leq b \quad \& \quad b \leq c \implies 
+    \end{align*}
+    \begin{itemize}
+            \item $a < b \;\&\; b = c \implies a < c$
+            \item $a = b \;\&\;b = c \implies a = c$
+            \item $a < b \;\&\; b < c \implies a < c$
+            \item $a = b \;\&\;b < c \implies a < c$
+        \end{itemize}
+    Пусть существует отношение частичного порядка, которое отличается от приведенного выше и образует такие же классы эквивалентности. \\
+    $\forall a, b: aR_1b$ или $bR_1a$ или $aR_1b \; \& \; bR_1a$. Если для $R_2$(новое) отношение между $a$ и $b$ отлично отношения в $R_2$, то классы эквивалентности по $R_2$ будут другие.
+
+    
+    \item
+    Пусть такой объект существует: $\quad \forall F: F = aD$
+        \begin{itemize}
+            \item Рассмотрим случай $m > n \implies$ базисных векторов $V^{n}$ n штук, тогда хотя бы один из векторов 
+            переданных в качестве аргумента $D$ будет линейно зависим от остальных $\implies \forall x_1\dots x_m: D(x_1 \dots x_m) = 0 \implies$ 
+            с помощью D мы можем выразить только нуль-форму $\implies$ противоречие. 
+            \item Рассмотрим случай $m < n \implies$ можем найти детерминант матрицы $A_{n \times m}$, который равен детерминанту $A^{T}$, но по предыдущем пункту
+            детерминант матрицы  $m \times n$ равен нуль-форме $\implies$ противоречие.
+
+        \end{itemize}
+    \item 
+    \begin{itemize}
+        \item $K_y = (0; y) \;$ где $\; y = \frac{1}{n}$ \\
+         $g(K_y) = \sup K_y = y = \frac{1}{n}$ \\
+         $f(x) = x \implies f(g(K_y)) = y$ \\
+         \item
+         $K_y = (0; y)$ \\
+         $g(K_y) = y$ \\
+         $f(x) = x \implies f(g(K_y)) = y$
+
+    \end{itemize}
+    \item  
+    \begin{align*}
+        &\det (e_1 \dots e_n) = \sum\limits_{i_1\dots i_n = 1}^{n}{\varepsilon_{i_1 \dots i_n} e_{1}^{i_1} \dots e_{n}^{i_n}}j; \\
+        &\text{Пусть: } \det (e_1 \dots e_n) = 0 \implies \forall \sigma \text{(перестановка)}: \exists k: e_{k}^{\sigma(k)} = 0; \\
+        &\text {По определению базисных векторов: } \forall k: \exists ! \quad i(k) : e_{k}^{i(k)} = 1 \\
+        & \text{Рассмотрим: } \sigma(k) = i(k) \implies e_{1}^{\sigma(1)}  \dots  e_{n}^{\sigma(n)} = 1 \implies \text{противоречие} \implies \det (e_1 \dots e_n) \neq 0
+    \end{align*}
+    \item  
+        $$
+            \sum\limits_{S_n}{
+                (-1)^{P(\delta_1 \dots \delta_n)} 
+                \sum\limits_{p_1 \dots p_n = 0}^{n}{B^{\delta_1}_{p_1} \dots B^{\delta_n}_{p_n}  C^{p_1}_{1} \dots C^{p_n}_{n}}
+            }
+        $$
+        Докажем, что если $\exists i, j: i \neq j $ и $ p_i = p_j = k$, то \quad $\exists \delta, \delta^{\prime}: (-1)^{P(\delta)} \neq (-1)^{P(\delta^{\prime})}$ такие, что 
+        $$
+          B^{\delta_1}_{p_1} \dots B^{\delta_n}_{p_n}  C^{p_1}_{1} \dots C^{p_n}_{n}  = B^{\delta^{\prime}_1}_{p_1} \dots B^{\delta^{\prime}_n}_{p_n}  C^{p_1}_{1} \dots C^{p_n}_{n}
+        $$
+        Возьмем произвольную перестановку $\delta$, тогда $\delta^{\prime} = \delta \cdot \underbrace{(i j)}_\text{транспозиция}$ \\
+        Очевидно, что  $\forall \delta: (-1)^{P(\delta)} = 1: \exists \delta^{\prime}$. Таким образом, все они взаимно сократятся.
+        Из этого следует, что итерация должна происходить только по перестановкам:
+        $$
+        \sum\limits_{S_n(\delta)}{
+                (-1)^{P(\delta_1 \dots \delta_n)} 
+                \sum\limits_{p_1 \dots p_n = 0}^{n}{B^{\delta_1}_{p_1} \dots B^{\delta_n}_{p_n}  C^{p_1}_{1} \dots C^{p_n}_{n}}
+            } = 
+            \sum\limits_{S_n(\delta)}{
+                (-1)^{P(\delta_1 \dots \delta_n)} 
+                \sum\limits_{S_n(\omega)}^{n}{B^{\delta_1}_{\omega_1} \dots B^{\delta_n}_{\omega_n}  C^{\omega_1}_{1} \dots C^{\omega_n}_{n}}
+            }
+        $$
+
+        Для произвольной перестановки $\delta$ из $B^{\delta_1}\dots B^{\delta_n}$ используя коммутативность операции умножения мы можем получить 
+        $n!$ различных перестановок множителей, так что их произведения будут равны для каждой перестановки. Таким образом, если мы возьмем произвольную перестановку множителей
+        (назовем ее $\omega$), меняя местами множители мы можем получить:  
+       \begin{align*}
+        &B^{\delta_1}_{\omega_1}\dots B^{\delta_n}_{\omega_n} = B^{\delta^{\prime}_1}_{1}\dots B^{\delta^{\prime}_n}_n \text{, где }\\
+        &\delta^{\prime} = \delta \cdot \omega^{-1} \implies (-1)^{P(\delta^{\prime})} = (-1)^{P(\delta)} \cdot (-1)^{P(\omega^{-1})} =
+        (-1)^{P(\delta)} \cdot (-1)^{P(\omega)}
+       \end{align*} 
+       Таким образом мы можем вынести общий множитель.
+       $$
+        \sum\limits_{S_n(\delta)}{
+                (-1)^{P(\delta_1 \dots \delta_n)} 
+                \sum\limits_{S_n(\omega)}^{n}{B^{\delta_1}_{\omega_1} \dots B^{\delta_n}_{\omega_n}  C^{\omega_1}_{1} \dots C^{\omega_n}_{n}}
+            } = \sum_{S_n(\delta)}{(-1)^{P(\delta)} B^{\delta_1}_{1} \dots B^{\delta_n}_{n}} \sum_{S_n(\omega)}{(-1)^{P(\omega)} C^{\omega_1}_{1} \dots C^{\omega_n}_{n}}
+       $$
+    \item 
+    \begin{align*}
+        & \text{ Пусть: } A^{-1} = B. \quad \text{По определению обратной матрицы: } A \cdot B = I \quad \text{(identity matrix)} \implies \\ 
+        & \implies (A \cdot B)^{i}_{i} = \sum\limits_{k = 1}^{n}{A^{i}_{k}B^{k}_{i}} = \sum\limits_{k = 1}^{n}{\delta^{i}_{k}A^{i}_{k} B^{k}_{i}} = 1,\quad где \delta^{i}_{k} =
+            \systeme*{1 | i=k,0 |i \neq k} \implies \\
+        & \implies A^{i}_{i} \cdot B^{i}_{i} = 1 \implies B^{i}_{i} = (A^{-1})^{i}_{i}= \frac{1}{A^{i}_{i}}
+    \end{align*}
+    \item 
+    \begin{itemize}
+        \item 
+        $L = \{f_a | a \in A\}$. Т.д. L - базис $F(A)$\\
+        \begin{align*}
+        &M_f = \{f(a) = y_a \: | \: a \in A \text{ и } y_a \neq 0\}. \; \text{По определению: } |M_f| \neq \infty\\
+        &\forall f \in F(A): \; \forall a \in A: \; \exists f_a \in L: \; f(a) = y_a = y_a \cdot f_a(a) = \sum_{a^{\prime} \in A}{f_a(a^{\prime})y_a} \\
+        &\text{По определению } L: |L| = |A| \implies f(a) = \sum_{a^{\prime} \in A}{f_a(a^{\prime})y_a} = \sum_{g \in L}{g(a) \cdot y_a}
+        \end{align*}
+        
+        \item
+        Пусть существует изоморфизм: $\varphi: F(A) \to G \implies \exists \varphi^{-1}: G \to F(A)\quad$ $\varphi^{-1}$ - также является изоморфизмом \\
+        Из данного определения базиса следует, что существует не единственное представление нуля. 
+        $$
+            \sum_{x \in A}{n_x x} = \sum_{x \in A}{n^{\prime}_{x}x} = 0_G
+        $$
+        $$
+            \varphi^{-1}(\sum_{x \in A}{n_x x}) = \varphi^{-1}(\sum_{x \in A}{n^{\prime}_{x}x}) = \varphi^{-1}(0_G) = y
+        $$
+        Нарушена биективность $\implies $ группы не изоморфны.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,109 @@
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\usepackage{listings}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+
+\begin{document}
+\begin{enumerate}
+    \item [9.149]
+    \begin{itemize}
+        \item $w_i$ - произвольная перестановка
+        \item $y(w_i)$ - количество неподвижных точек в ней
+        \item $p(w_i) = \frac{1}{n!}$ - вероятность случайной перестановки
+        \item $E(y) = \sum\limits_{i}{y(w_i)p(w_i)} = \frac{1}{n!}\sum\limits_{i}{y(w_i)}$
+        \item Будем считать общее количество неподвижных точек во всех перестановках по рядам.
+        \item Мы нарисуем двудольный граф, где слева все точки, а справа все перестановки, где ребро есть между точкой и перестановкой только, \\
+        когда точка неподвижна в данной перестановке. Количество ребер равно необходимому количеству. Кол-во ребер можно посчитать используя только левые точки.
+        \item Зафиксируем $a_i$, возможных перестановок, где $a_i$ будет неподвижной точкой $(n-1)!$, включая те, где больше одной неподвижной точки.
+        \item $n (n-1)!$ - необходимое количество $\implies E(y) = 1$
+    \end{itemize}
+
+    \item [10.152] 
+    \begin{itemize}
+        \item 
+        \begin{lstlisting}
+            for i in range(n):
+                for j in range(k):
+                    dp[i + j + 1] = min(dp[i + j + 1], dp[i] + a[i + j + 1])
+        \end{lstlisting}
+    \end{itemize}
+
+    \item [10.153]
+    \begin{itemize}
+        \item На i-том шаге поддерживаем очередь на минимум из предыдущих k элементов 
+        \item Очередь на двух стеках
+        \begin{itemize}
+            \item Элемент очереди: (элемент, минимальный элемент в этом стеке среди элементов добавленных ранее)
+            \item Добавление: (элемент, q1.front || элемент)
+        \end{itemize}
+        \item При переходе добавляем элемент в очередь и удаляем q.front
+        \item Очередь работает за $\mathcal{O}(1)$ так как каждый элемент добавляется и удаляется только 1 раз, в итоге 3n операций
+    \end{itemize}
+
+    \item [10.154] 
+    \begin{itemize}
+        \item 1. $dp[i - 1] > dp[i - 2] \implies dp_{path}[i] = dp_{path}[i-2]$
+        \item 2. $dp[i - 1] < dp[i - 2] \implies dp_{path}[i] = dp_{path}[i - 1]$
+        \item 3. $dp[i-1] == dp[i-2] \implies dp_{path}[i] = dp_{path}[i-1] + dp_{path}[i-2]$
+    \end{itemize}
+
+    \item [10.155] 
+    \begin{itemize}
+        \item 1. $dp[i - 1] > dp[i - 2] \implies dp_{path}[i] = dp_{path}[i-2]$
+        \item 2. $dp[i - 1] < dp[i - 2] \implies dp_{path}[i] = dp_{path}[i - 1]$
+        \item 3. $dp[i-1] == dp[i-2] \implies dp_{path}[i] = dp_{path}[i-1] + dp_{path}[i-2]$
+    \end{itemize}
+
+    \item [10.156]
+    \begin{itemize}
+        \item На i-том шаге ищем лексиграфически минимальный префикс среди $[0, i-1]$
+        \item $dp[i] = findMinPrefix(0, i - 1) + a_i$
+    \end{itemize}
+
+    \item [10.157]
+    \begin{itemize}
+        \item Поддерживаем $dp_{even}, dp_{odd}$, каждый элемент которых представляет максимальную сумму в данном элементе.
+        \item $a_i$ - odd $\implies$ 
+        \begin{align*}
+             &dp_{even}[i][j] = max(dp_{odd}[i-1][j], dp_{odd}[i][j- 1]) + a_i \\
+             &dp_{odd}[i][j] = max(dp_{even}[i-1][j], dp_{even}[i][j-1]) + a_i \\ 
+        \end{align*}
+        \item Аналогично с $a_i$ - even
+        \item Сумма максимальна так как мы всегда прибавляем к максимальной 
+    \end{itemize}
+
+    \item [10.158]
+    \begin{itemize}
+        \item $dp[i][j][k]$ - количество путей в (i, j) со стоимостью k
+        \item щ
+        \begin{lstlisting}
+            for i in range(n):
+                for j in range(m):
+                    for l in range(k):
+                        if a[i][j] + l > k:
+                            cnt += dp[i - 1][j][l]
+                            cnt += dp[i][j - 1][l]
+                        else:
+                            dp[i][j][a[i][j] + l] += dp[i - 1][j][l]
+                            dp[i][j][a[i][j] + l] += dp[i][j - 1][l]
+        \end{lstlisting}
+    \end{itemize}
+\end{enumerate}
+\end{document}

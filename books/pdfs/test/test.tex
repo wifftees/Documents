@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor}
+\author{Бугрий Илья M3134}
+\date{November 2023}
+
+\begin{document}
+\begin{enumerate}
+    \item Необходимо доказать, что для любого вектора линейного пространства $X(K)$
+    $$
+        \sum\limits_{i}{\alpha_i f^{i}} = \Theta \Longleftrightarrow \forall \alpha_i = 0 \Longleftrightarrow \nexists \{\alpha_i\}^{n}_{i = 1}: \forall x \in X(K) \sum\limits_{i}{\alpha_i (f^{i}, x)} = 0;
+    $$
+    \item Любой вектор $x \in X(K)$ можно разложить по базису $\implies \sum\limits_{i}{\alpha_i (f^{i}, x)} = \sum\limits_{i}{\alpha_i(f^{i}(\xi_1 e_1) + \dots + f^{i}(\xi_n e_n))} = \\
+    = \sum\limits_{i}{\alpha_i f^{i}(\xi_1 e_1) + \dots + \alpha_i f^{i}(\xi_n e_n)}$ 
+    \item Нужно доказать, что $e_j: \sum\limits_{i} \alpha_i (f^i, e_j) = 0 \Longleftrightarrow \alpha_j = 0$
+    \item $\sum\limits_{i} \alpha_i (f^i, e_j) = \sum\limits_{i} \alpha_i \delta^{i}_{j} \implies$ это равно нулю только когда $\alpha_j = 0$
+\end{enumerate}
+\end{document}
